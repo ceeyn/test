@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="test.dao.TOrderDao">
+
+    <!--添加-->
+	<insert id="add" parameterType="test.entity.TOrderEntity">
+		insert into `t_order`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderId != null">
+                order_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="orderStatus != null">
+                order_status,
+            </if>
+            <if test="goodNum != null">
+                good_num,
+            </if>
+            <if test="goodId != null">
+                good_id,
+            </if>
+            <if test="detailId != null">
+                detail_id,
+            </if>
+            <if test="addr != null">
+                addr,
+            </if>
+            <if test="addName != null">
+                add_name,
+            </if>
+            <if test="addTel != null">
+                add_tel,
+            </if>
+            <if test="timeSubmit != null">
+                time_submit,
+            </if>
+            <if test="timePay != null">
+                time_pay,
+            </if>
+            <if test="timeCancel != null">
+                time_cancel,
+            </if>
+            <if test="timeShip != null">
+                time_ship,
+            </if>
+            <if test="timeReturn != null">
+                time_return,
+            </if>
+            <if test="timeFinish != null">
+                time_finish,
+            </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				<if test="orderId != null">
+					#{orderId},
+				</if>
+				<if test="userId != null">
+					#{userId},
+				</if>
+				<if test="orderStatus != null">
+					#{orderStatus},
+				</if>
+				<if test="goodNum != null">
+					#{goodNum},
+				</if>
+				<if test="goodId != null">
+					#{goodId},
+				</if>
+				<if test="detailId != null">
+					#{detailId},
+				</if>
+				<if test="addr != null">
+					#{addr},
+				</if>
+				<if test="addName != null">
+					#{addName},
+				</if>
+				<if test="addTel != null">
+					#{addTel},
+				</if>
+				<if test="timeSubmit != null">
+					#{timeSubmit},
+				</if>
+				<if test="timePay != null">
+					#{timePay},
+				</if>
+				<if test="timeCancel != null">
+					#{timeCancel},
+				</if>
+				<if test="timeShip != null">
+					#{timeShip},
+				</if>
+				<if test="timeReturn != null">
+					#{timeReturn},
+				</if>
+				<if test="timeFinish != null">
+					#{timeFinish},
+				</if>
+		</trim>
+	</insert>
+
+    <!--删除-->
+	<delete id="delete" parameterType="test.entity.TOrderEntity">
+		delete from `t_order`
+		<where>
+            <if test="orderId != null">
+                and order_id=#{orderId}
+            </if>
+            <if test="orderId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</delete>
+
+    <!--更新-->
+	<update id="update" parameterType="test.entity.TOrderEntity">
+		update `t_order`
+		<trim prefix="set" suffixOverrides=",">
+				<if test="orderId != null">
+					order_id=#{orderId},
+				</if>
+				<if test="userId != null">
+					user_id=#{userId},
+				</if>
+				<if test="orderStatus != null">
+					order_status=#{orderStatus},
+				</if>
+				<if test="goodNum != null">
+					good_num=#{goodNum},
+				</if>
+				<if test="goodId != null">
+					good_id=#{goodId},
+				</if>
+				<if test="detailId != null">
+					detail_id=#{detailId},
+				</if>
+				<if test="addr != null">
+					addr=#{addr},
+				</if>
+				<if test="addName != null">
+					add_name=#{addName},
+				</if>
+				<if test="addTel != null">
+					add_tel=#{addTel},
+				</if>
+				<if test="timeSubmit != null">
+					time_submit=#{timeSubmit},
+				</if>
+				<if test="timePay != null">
+					time_pay=#{timePay},
+				</if>
+				<if test="timeCancel != null">
+					time_cancel=#{timeCancel},
+				</if>
+				<if test="timeShip != null">
+					time_ship=#{timeShip},
+				</if>
+				<if test="timeReturn != null">
+					time_return=#{timeReturn},
+				</if>
+				<if test="timeFinish != null">
+					time_finish=#{timeFinish},
+				</if>
+		</trim>
+		<where>
+            <if test="orderId != null">
+                and order_id=#{orderId}
+            </if>
+            <if test="orderId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</update>
+
+    <!--固定条件查询-->
+	<select id="select" parameterType="test.entity.TOrderEntity"
+		resultType="test.entity.TOrderEntity">
+			select
+				order_id as "orderId",
+				user_id as "userId",
+				order_status as "orderStatus",
+				good_num as "goodNum",
+				good_id as "goodId",
+				detail_id as "detailId",
+				addr as "addr",
+				add_name as "addName",
+				add_tel as "addTel",
+				time_submit as "timeSubmit",
+				time_pay as "timePay",
+				time_cancel as "timeCancel",
+				time_ship as "timeShip",
+				time_return as "timeReturn",
+				time_finish as "timeFinish"
+			from `t_order`
+			<where>
+					<if test="orderId != null">
+						and order_id=#{orderId}
+					</if>
+					<if test="userId != null">
+						and user_id=#{userId}
+					</if>
+					<if test="orderStatus != null">
+						and order_status=#{orderStatus}
+					</if>
+					<if test="goodNum != null">
+						and good_num=#{goodNum}
+					</if>
+					<if test="goodId != null">
+						and good_id=#{goodId}
+					</if>
+					<if test="detailId != null">
+						and detail_id=#{detailId}
+					</if>
+					<if test="addr != null">
+						and addr=#{addr}
+					</if>
+					<if test="addName != null">
+						and add_name=#{addName}
+					</if>
+					<if test="addTel != null">
+						and add_tel=#{addTel}
+					</if>
+					<if test="timeSubmit != null">
+						and time_submit=#{timeSubmit}
+					</if>
+					<if test="timePay != null">
+						and time_pay=#{timePay}
+					</if>
+					<if test="timeCancel != null">
+						and time_cancel=#{timeCancel}
+					</if>
+					<if test="timeShip != null">
+						and time_ship=#{timeShip}
+					</if>
+					<if test="timeReturn != null">
+						and time_return=#{timeReturn}
+					</if>
+					<if test="timeFinish != null">
+						and time_finish=#{timeFinish}
+					</if>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊查询的公共条件）-->
+    <sql id="likeSelectConditions">
+                <if test="orderId != null and orderId != '' ">
+                and order_id <![CDATA[=]]> #{orderId}
+                </if>
+                <if test="userId != null and userId != '' ">
+                and user_id <![CDATA[=]]> #{userId}
+                </if>
+                <if test="orderStatus != null and orderStatus != '' ">
+                and order_status <![CDATA[=]]> #{orderStatus}
+                </if>
+                <if test="goodNum != null and goodNum != '' ">
+                and good_num <![CDATA[=]]> #{goodNum}
+                </if>
+                <if test="goodId != null and goodId != '' ">
+                and good_id <![CDATA[=]]> #{goodId}
+                </if>
+                <if test="detailId != null and detailId != '' ">
+                and detail_id <![CDATA[=]]> #{detailId}
+                </if>
+                <if test="addr != null and addr != '' ">
+                and addr <![CDATA[=]]> #{addr}
+                </if>
+                <if test="addName != null and addName != '' ">
+                and add_name <![CDATA[=]]> #{addName}
+                </if>
+                <if test="addTel != null and addTel != '' ">
+                and add_tel <![CDATA[=]]> #{addTel}
+                </if>
+                <if test="timeSubmit != null and timeSubmit != '' ">
+                and time_submit <![CDATA[=]]> #{timeSubmit}
+                </if>
+                <if test="timePay != null and timePay != '' ">
+                and time_pay <![CDATA[=]]> #{timePay}
+                </if>
+                <if test="timeCancel != null and timeCancel != '' ">
+                and time_cancel <![CDATA[=]]> #{timeCancel}
+                </if>
+                <if test="timeShip != null and timeShip != '' ">
+                and time_ship <![CDATA[=]]> #{timeShip}
+                </if>
+                <if test="timeReturn != null and timeReturn != '' ">
+                and time_return <![CDATA[=]]> #{timeReturn}
+                </if>
+                <if test="timeFinish != null and timeFinish != '' ">
+                and time_finish <![CDATA[=]]> #{timeFinish}
+                </if>
+    </sql>
+
+    <!--分页（模糊）查询-->
+	<select id="likeSelect" parameterType="test.entity.TOrderEntity"
+		resultType="test.entity.TOrderEntity">
+			select
+				order_id as "orderId",
+				user_id as "userId",
+				order_status as "orderStatus",
+				good_num as "goodNum",
+				good_id as "goodId",
+				detail_id as "detailId",
+				addr as "addr",
+				add_name as "addName",
+				add_tel as "addTel",
+				time_submit as "timeSubmit",
+				time_pay as "timePay",
+				time_cancel as "timeCancel",
+				time_ship as "timeShip",
+				time_return as "timeReturn",
+				time_finish as "timeFinish"
+
+                from `t_order`
+
+			<where>
+                <include refid="likeSelectConditions"/>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊）查询条数-->
+	<select id="likeSelectCount" parameterType="test.entity.TOrderEntity"
+		resultType="java.lang.Long">
+		select
+			count(1)
+		from `t_order`
+
+		<where>
+            <include refid="likeSelectConditions"/>
+		</where>
+	</select>
+
+</mapper>

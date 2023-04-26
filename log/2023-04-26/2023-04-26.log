@@ -1,0 +1,370 @@
+2023-04-26 08:44:25 -Starting TestApplication on MacBook-Pro-3.local with PID 29279 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-26 08:44:25 -No active profile set, falling back to default profiles: default
+2023-04-26 08:44:26 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 08:44:26 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 08:44:27 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$614d74bc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:44:27 -Tomcat initialized with port(s): 8080 (http)
+2023-04-26 08:44:27 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:44:27 -Starting service [Tomcat]
+2023-04-26 08:44:27 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-26 08:44:28 -Initializing Spring embedded WebApplicationContext
+2023-04-26 08:44:28 -Root WebApplicationContext: initialization completed in 1964 ms
+2023-04-26 08:44:28 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-26 08:44:28 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:44:29 -LiveReload server is running on port 35729
+2023-04-26 08:44:29 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-26 08:44:29 -Initializing ExecutorService 'taskScheduler'
+2023-04-26 08:44:29 -Context refreshed
+2023-04-26 08:44:29 -Found 1 custom documentation plugin(s)
+2023-04-26 08:44:29 -Scanning for api listing references
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_1
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_1
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_1
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_1
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_2
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_2
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_2
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_2
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_3
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_3
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_3
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_3
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_4
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_4
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_4
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_4
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_5
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_5
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_5
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_5
+2023-04-26 08:44:29 -Generating unique operation named: addUsingPOST_6
+2023-04-26 08:44:29 -Generating unique operation named: deleteUsingPOST_6
+2023-04-26 08:44:29 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-26 08:44:29 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-26 08:44:29 -Generating unique operation named: selectUsingPOST_6
+2023-04-26 08:44:29 -Generating unique operation named: updateUsingPOST_6
+2023-04-26 08:44:29 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:44:29 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-26 08:44:29 -Started TestApplication in 4.332 seconds (JVM running for 5.269)
+2023-04-26 08:44:54 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 08:44:54 -Initializing Servlet 'dispatcherServlet'
+2023-04-26 08:44:54 -Completed initialization in 9 ms
+2023-04-26 08:46:39 -Shutting down ExecutorService 'taskScheduler'
+2023-04-26 08:46:39 -Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:46:44 -Starting TestApplication on MacBook-Pro-3.local with PID 29301 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-26 08:46:44 -No active profile set, falling back to default profiles: default
+2023-04-26 08:46:44 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 08:46:44 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 08:46:46 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$e08c0434] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:46:46 -Tomcat initialized with port(s): 8080 (http)
+2023-04-26 08:46:46 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:46:46 -Starting service [Tomcat]
+2023-04-26 08:46:46 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-26 08:46:46 -Initializing Spring embedded WebApplicationContext
+2023-04-26 08:46:46 -Root WebApplicationContext: initialization completed in 1604 ms
+2023-04-26 08:46:47 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-26 08:46:47 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:46:47 -LiveReload server is running on port 35729
+2023-04-26 08:46:47 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-26 08:46:47 -Initializing ExecutorService 'taskScheduler'
+2023-04-26 08:46:47 -Context refreshed
+2023-04-26 08:46:47 -Found 1 custom documentation plugin(s)
+2023-04-26 08:46:47 -Scanning for api listing references
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_1
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_1
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_1
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_1
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_2
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_2
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_2
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_2
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_3
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_3
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_3
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_3
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_4
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_4
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_4
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_4
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_5
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_5
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_5
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_5
+2023-04-26 08:46:47 -Generating unique operation named: addUsingPOST_6
+2023-04-26 08:46:47 -Generating unique operation named: deleteUsingPOST_6
+2023-04-26 08:46:47 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-26 08:46:47 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-26 08:46:47 -Generating unique operation named: selectUsingPOST_6
+2023-04-26 08:46:47 -Generating unique operation named: updateUsingPOST_6
+2023-04-26 08:46:47 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:46:47 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-26 08:46:47 -Started TestApplication in 3.509 seconds (JVM running for 4.351)
+2023-04-26 08:46:50 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 08:46:50 -Initializing Servlet 'dispatcherServlet'
+2023-04-26 08:46:50 -Completed initialization in 7 ms
+2023-04-26 08:47:31 -Shutting down ExecutorService 'taskScheduler'
+2023-04-26 08:47:31 -Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:47:50 -Starting TestApplication on MacBook-Pro-3.local with PID 29413 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-26 08:47:50 -No active profile set, falling back to default profiles: default
+2023-04-26 08:47:50 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 08:47:50 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 08:47:51 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$be3025fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:47:51 -Tomcat initialized with port(s): 8080 (http)
+2023-04-26 08:47:51 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:47:51 -Starting service [Tomcat]
+2023-04-26 08:47:51 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-26 08:47:52 -Initializing Spring embedded WebApplicationContext
+2023-04-26 08:47:52 -Root WebApplicationContext: initialization completed in 1382 ms
+2023-04-26 08:47:52 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-26 08:47:52 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:47:52 -LiveReload server is running on port 35729
+2023-04-26 08:47:52 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-26 08:47:52 -Initializing ExecutorService 'taskScheduler'
+2023-04-26 08:47:53 -Context refreshed
+2023-04-26 08:47:53 -Found 1 custom documentation plugin(s)
+2023-04-26 08:47:53 -Scanning for api listing references
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_1
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_1
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_1
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_1
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_2
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_2
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_2
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_2
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_3
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_3
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_3
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_3
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_4
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_4
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_4
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_4
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_5
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_5
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_5
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_5
+2023-04-26 08:47:53 -Generating unique operation named: addUsingPOST_6
+2023-04-26 08:47:53 -Generating unique operation named: deleteUsingPOST_6
+2023-04-26 08:47:53 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-26 08:47:53 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-26 08:47:53 -Generating unique operation named: selectUsingPOST_6
+2023-04-26 08:47:53 -Generating unique operation named: updateUsingPOST_6
+2023-04-26 08:47:53 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:47:53 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-26 08:47:53 -Started TestApplication in 3.201 seconds (JVM running for 3.849)
+2023-04-26 08:47:55 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 08:47:55 -Initializing Servlet 'dispatcherServlet'
+2023-04-26 08:47:55 -Completed initialization in 8 ms
+2023-04-26 08:48:29 -Shutting down ExecutorService 'taskScheduler'
+2023-04-26 08:48:29 -Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:48:35 -Starting TestApplication on MacBook-Pro-3.local with PID 29426 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-26 08:48:35 -No active profile set, falling back to default profiles: default
+2023-04-26 08:48:35 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 08:48:35 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 08:48:36 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$54b91991] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:48:36 -Tomcat initialized with port(s): 8080 (http)
+2023-04-26 08:48:36 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:48:36 -Starting service [Tomcat]
+2023-04-26 08:48:36 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-26 08:48:36 -Initializing Spring embedded WebApplicationContext
+2023-04-26 08:48:36 -Root WebApplicationContext: initialization completed in 1421 ms
+2023-04-26 08:48:37 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-26 08:48:37 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:48:37 -LiveReload server is running on port 35729
+2023-04-26 08:48:37 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-26 08:48:37 -Initializing ExecutorService 'taskScheduler'
+2023-04-26 08:48:37 -Context refreshed
+2023-04-26 08:48:37 -Found 1 custom documentation plugin(s)
+2023-04-26 08:48:37 -Scanning for api listing references
+2023-04-26 08:48:37 -Generating unique operation named: addUsingPOST_1
+2023-04-26 08:48:37 -Generating unique operation named: deleteUsingPOST_1
+2023-04-26 08:48:37 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-26 08:48:37 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-26 08:48:37 -Generating unique operation named: selectUsingPOST_1
+2023-04-26 08:48:37 -Generating unique operation named: updateUsingPOST_1
+2023-04-26 08:48:37 -Generating unique operation named: addUsingPOST_2
+2023-04-26 08:48:37 -Generating unique operation named: deleteUsingPOST_2
+2023-04-26 08:48:37 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-26 08:48:37 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-26 08:48:37 -Generating unique operation named: selectUsingPOST_2
+2023-04-26 08:48:37 -Generating unique operation named: updateUsingPOST_2
+2023-04-26 08:48:37 -Generating unique operation named: addUsingPOST_3
+2023-04-26 08:48:37 -Generating unique operation named: deleteUsingPOST_3
+2023-04-26 08:48:37 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-26 08:48:37 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-26 08:48:37 -Generating unique operation named: selectUsingPOST_3
+2023-04-26 08:48:37 -Generating unique operation named: updateUsingPOST_3
+2023-04-26 08:48:37 -Generating unique operation named: addUsingPOST_4
+2023-04-26 08:48:37 -Generating unique operation named: deleteUsingPOST_4
+2023-04-26 08:48:37 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-26 08:48:37 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-26 08:48:37 -Generating unique operation named: selectUsingPOST_4
+2023-04-26 08:48:37 -Generating unique operation named: updateUsingPOST_4
+2023-04-26 08:48:38 -Generating unique operation named: addUsingPOST_5
+2023-04-26 08:48:38 -Generating unique operation named: deleteUsingPOST_5
+2023-04-26 08:48:38 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-26 08:48:38 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-26 08:48:38 -Generating unique operation named: selectUsingPOST_5
+2023-04-26 08:48:38 -Generating unique operation named: updateUsingPOST_5
+2023-04-26 08:48:38 -Generating unique operation named: addUsingPOST_6
+2023-04-26 08:48:38 -Generating unique operation named: deleteUsingPOST_6
+2023-04-26 08:48:38 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-26 08:48:38 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-26 08:48:38 -Generating unique operation named: selectUsingPOST_6
+2023-04-26 08:48:38 -Generating unique operation named: updateUsingPOST_6
+2023-04-26 08:48:38 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:48:38 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-26 08:48:38 -Started TestApplication in 3.185 seconds (JVM running for 3.951)
+2023-04-26 08:48:39 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 08:48:39 -Initializing Servlet 'dispatcherServlet'
+2023-04-26 08:48:39 -Completed initialization in 7 ms
+2023-04-26 08:49:30 -Shutting down ExecutorService 'taskScheduler'
+2023-04-26 08:49:30 -Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:49:36 -Starting TestApplication on MacBook-Pro-3.local with PID 29431 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-26 08:49:36 -No active profile set, falling back to default profiles: default
+2023-04-26 08:49:36 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 08:49:36 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 08:49:37 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$ae9c4ed9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-26 08:49:37 -Tomcat initialized with port(s): 8080 (http)
+2023-04-26 08:49:37 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:49:37 -Starting service [Tomcat]
+2023-04-26 08:49:37 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-26 08:49:38 -Initializing Spring embedded WebApplicationContext
+2023-04-26 08:49:38 -Root WebApplicationContext: initialization completed in 1421 ms
+2023-04-26 08:49:38 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-26 08:49:39 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-26 08:49:39 -LiveReload server is running on port 35729
+2023-04-26 08:49:39 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-26 08:49:39 -Initializing ExecutorService 'taskScheduler'
+2023-04-26 08:49:39 -Context refreshed
+2023-04-26 08:49:39 -Found 1 custom documentation plugin(s)
+2023-04-26 08:49:39 -Scanning for api listing references
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_1
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_1
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_1
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_1
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_2
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_2
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_2
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_2
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_3
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_3
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_3
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_3
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_4
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_4
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_4
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_4
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_5
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_5
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_5
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_5
+2023-04-26 08:49:39 -Generating unique operation named: addUsingPOST_6
+2023-04-26 08:49:39 -Generating unique operation named: deleteUsingPOST_6
+2023-04-26 08:49:39 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-26 08:49:39 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-26 08:49:39 -Generating unique operation named: selectUsingPOST_6
+2023-04-26 08:49:39 -Generating unique operation named: updateUsingPOST_6
+2023-04-26 08:49:39 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-26 08:49:39 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-26 08:49:39 -Started TestApplication in 3.405 seconds (JVM running for 4.172)
+2023-04-26 08:49:49 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 08:49:49 -Initializing Servlet 'dispatcherServlet'
+2023-04-26 08:49:49 -Completed initialization in 11 ms
+2023-04-26 08:50:02 -Shutting down ExecutorService 'taskScheduler'
+2023-04-26 08:50:02 -Shutting down ExecutorService 'applicationTaskExecutor'

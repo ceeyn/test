@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="test.dao.TDetailDao">
+
+    <!--添加-->
+	<insert id="add" parameterType="test.entity.TDetailEntity">
+		insert into `t_detail`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodId != null">
+                good_id,
+            </if>
+            <if test="detailId != null">
+                detail_id,
+            </if>
+            <if test="detailName != null">
+                detail_name,
+            </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				<if test="goodId != null">
+					#{goodId},
+				</if>
+				<if test="detailId != null">
+					#{detailId},
+				</if>
+				<if test="detailName != null">
+					#{detailName},
+				</if>
+		</trim>
+	</insert>
+
+    <!--删除-->
+	<delete id="delete" parameterType="test.entity.TDetailEntity">
+		delete from `t_detail`
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+            <if test="detailId != null">
+                and detail_id=#{detailId}
+            </if>
+            <if test="detailId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</delete>
+
+    <!--更新-->
+	<update id="update" parameterType="test.entity.TDetailEntity">
+		update `t_detail`
+		<trim prefix="set" suffixOverrides=",">
+				<if test="goodId != null">
+					good_id=#{goodId},
+				</if>
+				<if test="detailId != null">
+					detail_id=#{detailId},
+				</if>
+				<if test="detailName != null">
+					detail_name=#{detailName},
+				</if>
+		</trim>
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+            <if test="detailId != null">
+                and detail_id=#{detailId}
+            </if>
+            <if test="detailId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</update>
+
+    <!--固定条件查询-->
+	<select id="select" parameterType="test.entity.TDetailEntity"
+		resultType="test.entity.TDetailEntity">
+			select
+				good_id as "goodId",
+				detail_id as "detailId",
+				detail_name as "detailName"
+			from `t_detail`
+			<where>
+					<if test="goodId != null">
+						and good_id=#{goodId}
+					</if>
+					<if test="detailId != null">
+						and detail_id=#{detailId}
+					</if>
+					<if test="detailName != null">
+						and detail_name=#{detailName}
+					</if>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊查询的公共条件）-->
+    <sql id="likeSelectConditions">
+                <if test="goodId != null and goodId != '' ">
+                and good_id <![CDATA[=]]> #{goodId}
+                </if>
+                <if test="detailId != null and detailId != '' ">
+                and detail_id <![CDATA[=]]> #{detailId}
+                </if>
+                <if test="detailName != null and detailName != '' ">
+                and detail_name <![CDATA[=]]> #{detailName}
+                </if>
+    </sql>
+
+    <!--分页（模糊）查询-->
+	<select id="likeSelect" parameterType="test.entity.TDetailEntity"
+		resultType="test.entity.TDetailEntity">
+			select
+				good_id as "goodId",
+				detail_id as "detailId",
+				detail_name as "detailName"
+
+                from `t_detail`
+
+			<where>
+                <include refid="likeSelectConditions"/>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊）查询条数-->
+	<select id="likeSelectCount" parameterType="test.entity.TDetailEntity"
+		resultType="java.lang.Long">
+		select
+			count(1)
+		from `t_detail`
+
+		<where>
+            <include refid="likeSelectConditions"/>
+		</where>
+	</select>
+
+</mapper>

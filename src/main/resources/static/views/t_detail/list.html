@@ -1,0 +1,421 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>test</title>
+            <meta name="keywords" content="">
+            <meta name="description" content="">
+            <link rel="shortcut icon" href="../favicon.ico">
+            <link href="../../css/bootstrap.min-custom.css" rel="stylesheet">
+            <link href="../../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+            <link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+            <link href="../../css/animate.css" rel="stylesheet">
+            <link href="../../css/style.css?v=4.1.0" rel="stylesheet">
+            <link href="../../css/plugins/pageMe/pageMe.css" rel="stylesheet"/>
+            <link href="../../css/plugins/progressbar/mprogress.css" rel="stylesheet"/>
+            <link href="../../css/plugins/progressbar/style.css" rel="stylesheet"/>
+        </head>
+
+        <body class="gray-bg">
+        <div id="body" >
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>t_detail管理模块</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row row-lg">
+                            <div class="clearfix hidden-xs"></div>
+                            <div class="col-sm-12">
+                                <!-- Example Checkbox Select -->
+                                <div class="example-wrap">
+
+                                    <!-- 查询区域 -->
+                                    <div id="queryModel" tagId="queryTag">
+                                                    <input type="text" v-model="goodId" placeholder="good_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="detailId" placeholder="detail_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="detailName" placeholder="detail_name"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                        <button type="button" class="btn btn-primary btn-sm" @click="queryInfo()">查询</button>&nbsp;
+                                        <button type="button" class="btn btn-primary btn-sm" @click="exportExcel()">导出excel</button>
+                                    </div>
+                                    <!-- 查询区域 end-->
+
+                                    <!-- 添加数据区域 -->
+                                    <div style="text-align: right; margin: 8px">
+                                        <button tagId="addTag" type="button" class="btn btn-success btn-sm" onclick="addMsg()" style="margin: 8px">
+                                            添加数据
+                                        </button>
+                                    </div>
+
+                                    <!-- 查询结果表格显示区域 -->
+                                    <div id="newsContent" class="table-responsive" style="overflow: scroll;" v-cloak>
+                                        <table class="table table-hover table-bordered text-nowrap">
+                                            <tr>
+                                                <th>操作</th>
+                                                        <th>good_id</th>
+                                                        <th>detail_id</th>
+                                                        <th>detail_name</th>
+                                            </tr>
+                                            <tbody id="dataTable">
+                                            <tr v-for="data in result">
+                                                <td>
+                                                <span tagId="upTag"><button type="button" class="btn btn-info btn-sm"
+                                                                            @click="upMsg(data.goodId,data.detailId,'/tDetail/select')">
+                                                    更新
+                                                </button>&nbsp;</span>
+                                                    <span tagId="delTag"><button type="button" class="btn btn-danger btn-sm"
+                                                                                 @click="delMsg(data.goodId,data.detailId,'/tDetail/delete')">
+                                                    删除
+                                                </button>&nbsp;</span>
+                                                </td>
+                                                    <td>{{data.goodId}}</td>
+                                                    <td>{{data.detailId}}</td>
+                                                    <td>{{data.detailName}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div id="pageID" class="page_div"></div>
+                                    </div>
+                                    <!-- 查询结果表格显示区域 end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 修改模态框 -->
+            <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="updateModalLabel">修改信息</h4>
+                        </div>
+                        <div class="modal-body" id="updateModalBody">
+                            <form>
+                                        <div class="form-group">
+                                            <label for="goodId-attr" class="control-label">good_id:</label>
+                                            <input type="text" class="form-control" id="goodId-attr"
+                                                   v-model="goodId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailId-attr" class="control-label">detail_id:</label>
+                                            <input type="text" class="form-control" id="detailId-attr"
+                                                   v-model="detailId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailName-attr" class="control-label">detail_name:</label>
+                                            <input type="text" class="form-control" id="detailName-attr"
+                                                   v-model="detailName"/>
+                                        </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="goodId-attr"
+                                               v-model="goodId"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="detailId-attr"
+                                               v-model="detailId"/>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" @click="confirmUp()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 添加模态框 -->
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="addModalLabel">添加信息</h4>
+                        </div>
+                        <div class="modal-body" id="addModalBody">
+                            <form>
+                                        <div class="form-group">
+                                            <label for="goodId-insert" class="control-label">good_id:</label>
+                                            <input type="text" class="form-control" id="goodId-insert"
+                                                   v-model="goodId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailId-insert" class="control-label">detail_id:</label>
+                                            <input type="text" class="form-control" id="detailId-insert"
+                                                   v-model="detailId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailName-insert" class="control-label">detail_name:</label>
+                                            <input type="text" class="form-control" id="detailName-insert"
+                                                   v-model="detailName"/>
+                                        </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" @click="confirmAdd()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 全局js -->
+            <script src="../../js/jquery.min.js?v=2.1.4"></script>
+            <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+
+            <!-- 自定义js -->
+            <script src="../../js/content.js?v=1.0.0"></script>
+
+
+            <!-- Bootstrap table -->
+            <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+            <script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+            <script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+            <!-- Peity -->
+            <!-- <script src="../../js/demo/bootstrap-table-demo.js"></script> -->
+            <script src="../../js/vue/vue.min.js"></script>
+            <script src="../../js/util/ajaxFactory.js"></script>
+            <script src="../../js/util/crudVueFactory.js"></script>
+            <script src="../../js/util/pageMe.js"></script>
+            <script src="../../js/config/config.js"></script>
+            <script src="../../js/plugins/layer/layer.min.js"></script>
+            <script src="../../js/plugins/progressbar/init-mprogress.js"></script>
+            <script src="../../js/plugins/progressbar/mprogress.js"></script>
+
+            <script>
+                var currentPage = 1;
+                var totalPage;
+                var sqlMap = {};
+                //排序的数据
+                var orderData = [];
+                var controllerPrefix = "tDetail";
+                var methodName = "likeSelect";
+
+                var queryVue = new Vue({
+                    el: '#queryModel',
+                    data: {
+                goodId :
+                '',
+                detailId :
+                '',
+                detailName :
+                ''                },
+                methods : {
+                    queryInfo : function () {
+                        sqlMap = {};
+                        sqlMap.goodId = this.goodId;
+                        sqlMap.detailId = this.detailId;
+                        sqlMap.detailName = this.detailName;
+                        currentPage = 1;
+                        orderData = [];
+                        $crud.getDataByCurrentPage();
+                    }
+                ,
+                    exportExcel : function () {
+
+                        //显示进度条
+                        InitMprogress();
+
+                        var param = '';
+
+                        for (var key in sqlMap) {
+                            if (sqlMap[key] != '') {
+                                param += key + "=" + sqlMap[key] + "&";
+                            }
+                        }
+
+                        window.location.href = basePath + "/" + controllerPrefix
+                            + "/exportExcel?" + param;
+                        // 进度条消失
+                        setTimeout("MprogressEnd()", totalPage / 20 * 1000);
+                    }
+                }
+
+                })
+                ;
+
+                function makeResult(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i] == null) {
+                            data[i] = {};
+                            data[i]["goodId"] = "无";
+                            data[i]["detailId"] = "无";
+                            data[i]["detailName"] = "无";
+                        }
+                    }
+                }
+
+                var tableVue = new Vue({
+                    el: '#newsContent',
+                    data: {
+                        result: []
+                    },
+                    //created:
+                    mounted: function () {
+                        $crud.getDataByCurrentPage();
+                    },
+                    methods: {
+
+                        upMsg: function (goodId, detailId, path) {
+
+                            $z.ajaxPost({
+                                url: basePath + path,
+                                data: {
+                            goodId : goodId,
+                            detailId : detailId
+                        },
+                            success : function (data) {
+                                $z.dealCommonResult(data, function () {
+                                    data = data.data;
+                                    upVue.goodId = data[0]["goodId"];
+                                    upVue.detailId = data[0]["detailId"];
+                                    upVue.goodId = data[0]["goodId"];
+                                    upVue.detailId = data[0]["detailId"];
+                                    upVue.detailName = data[0]["detailName"];
+                                    $('#updateModal').modal('show');
+                                });
+                            }
+                        })
+                            ;
+                        },
+                        delMsg: function (goodId, detailId, path) {
+                            layer.confirm("<em style='color:black'>" + '执行删除后将无法恢复，确定继续吗？' + "</em>", {
+                                icon: 3,
+                                offset: "200px",
+                                title: '温馨提示'
+                            }, function (index) {
+                                //do something
+                                $z.ajaxPost({
+                                    url: basePath + path,
+                                    data: {
+                                goodId : goodId,
+                                detailId : detailId
+                            },
+                                success: function (data) {
+                                    $z.dealCommonResult(data, function () {
+                                        $crud.getDataByCurrentPage();
+                                        layer.alert("<em style='color:black'>" + "删除成功！" + "</em>", {
+                                            icon: 6,
+                                            offset: "200px",
+                                            title: '提示'
+                                        });
+                                    });
+                                }
+                            })
+                                ;
+                                layer.close(index);
+                            });
+                        }
+                    }
+                });
+
+                var upVue = new Vue({
+                    el: "#updateModal",
+                    data: {
+                goodId :
+                '',
+                detailId :
+                '',
+                goodId :
+                '',
+                detailId :
+                '',
+                detailName :
+                ''                },
+                methods : {
+                    confirmUp : function () {
+                        $z.ajaxPost({
+                            url: basePath + "/" + controllerPrefix + "/update",
+                            data: {
+                        goodId :
+                        this.goodId,
+                        detailId :
+                        this.detailId,
+                        goodId :
+                        this.goodId,
+                        detailId :
+                        this.detailId,
+                        detailName :
+                        this.detailName                    },
+                        success : function (data) {
+                            $z.dealCommonResult(data, function () {
+                                layer.alert("<em style='color:black'>" + "更新成功！" + "</em>", {
+                                    icon: 6,
+                                    offset: "200px",
+                                    title: '提示'
+                                });
+                                $('#updateModal').modal('hide');
+                                $crud.getDataByCurrentPage();
+                            });
+
+                        }
+                    })
+                        ;
+                    }
+                }
+                })
+                ;
+
+                function addMsg() {
+                    $('#addModal').modal('show');
+                }
+
+                var addVue = new Vue({
+
+                    el: "#addModal",
+                    data: {
+                goodId :
+                '',
+                detailId :
+                '',
+                detailName :
+                ''                },
+                methods : {
+                    confirmAdd : function () {
+                        $z.ajaxPost({
+                            url: basePath + "/" + controllerPrefix + "/add",
+                            data: {
+                        goodId :
+                        this.goodId,
+                        detailId :
+                        this.detailId,
+                        detailName :
+                        this.detailName                    },
+                        success : function (data) {
+                            $z.dealCommonResult(data, function () {
+                                layer.alert("<em style='color:black'>" + "添加成功！" + "</em>", {
+                                    icon: 6,
+                                    offset: "200px",
+                                    title: '提示'
+                                });
+                                $('#addModal').modal('hide');
+                                //初始化
+                                sqlMap = {};
+                                currentPage = 1;
+                                $crud.getDataByCurrentPage();
+                            });
+
+                        }
+                    })
+                        ;
+                    }
+                }
+                })
+                ;
+            </script>
+        </div>
+        </body>
+        </html>

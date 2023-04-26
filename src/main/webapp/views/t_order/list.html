@@ -1,0 +1,734 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>test</title>
+            <meta name="keywords" content="">
+            <meta name="description" content="">
+            <link rel="shortcut icon" href="../favicon.ico">
+            <link href="../../css/bootstrap.min-custom.css" rel="stylesheet">
+            <link href="../../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+            <link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+            <link href="../../css/animate.css" rel="stylesheet">
+            <link href="../../css/style.css?v=4.1.0" rel="stylesheet">
+            <link href="../../css/plugins/pageMe/pageMe.css" rel="stylesheet"/>
+            <link href="../../css/plugins/progressbar/mprogress.css" rel="stylesheet"/>
+            <link href="../../css/plugins/progressbar/style.css" rel="stylesheet"/>
+        </head>
+
+        <body class="gray-bg">
+        <div id="body" >
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>t_order管理模块</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row row-lg">
+                            <div class="clearfix hidden-xs"></div>
+                            <div class="col-sm-12">
+                                <!-- Example Checkbox Select -->
+                                <div class="example-wrap">
+
+                                    <!-- 查询区域 -->
+                                    <div id="queryModel" tagId="queryTag">
+                                                    <input type="text" v-model="orderId" placeholder="order_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="userId" placeholder="user_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="orderStatus" placeholder="order_status"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="goodNum" placeholder="good_num"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="goodId" placeholder="good_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="detailId" placeholder="detail_id"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="addr" placeholder="addr"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="addName" placeholder="add_name"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="addTel" placeholder="add_tel"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timeSubmit" placeholder="time_submit"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timePay" placeholder="time_pay"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timeCancel" placeholder="time_cancel"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timeShip" placeholder="time_ship"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timeReturn" placeholder="time_return"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                                    <input type="text" v-model="timeFinish" placeholder="time_finish"
+                                                           style="margin-top: 10px"/>&nbsp;
+                                        <button type="button" class="btn btn-primary btn-sm" @click="queryInfo()">查询</button>&nbsp;
+                                        <button type="button" class="btn btn-primary btn-sm" @click="exportExcel()">导出excel</button>
+                                    </div>
+                                    <!-- 查询区域 end-->
+
+                                    <!-- 添加数据区域 -->
+                                    <div style="text-align: right; margin: 8px">
+                                        <button tagId="addTag" type="button" class="btn btn-success btn-sm" onclick="addMsg()" style="margin: 8px">
+                                            添加数据
+                                        </button>
+                                    </div>
+
+                                    <!-- 查询结果表格显示区域 -->
+                                    <div id="newsContent" class="table-responsive" style="overflow: scroll;" v-cloak>
+                                        <table class="table table-hover table-bordered text-nowrap">
+                                            <tr>
+                                                <th>操作</th>
+                                                        <th>order_id</th>
+                                                        <th>user_id</th>
+                                                        <th>order_status</th>
+                                                        <th>good_num</th>
+                                                        <th>good_id</th>
+                                                        <th>detail_id</th>
+                                                        <th>addr</th>
+                                                        <th>add_name</th>
+                                                        <th>add_tel</th>
+                                                        <th>time_submit</th>
+                                                        <th>time_pay</th>
+                                                        <th>time_cancel</th>
+                                                        <th>time_ship</th>
+                                                        <th>time_return</th>
+                                                        <th>time_finish</th>
+                                            </tr>
+                                            <tbody id="dataTable">
+                                            <tr v-for="data in result">
+                                                <td>
+                                                <span tagId="upTag"><button type="button" class="btn btn-info btn-sm"
+                                                                            @click="upMsg(data.orderId,'/tOrder/select')">
+                                                    更新
+                                                </button>&nbsp;</span>
+                                                    <span tagId="delTag"><button type="button" class="btn btn-danger btn-sm"
+                                                                                 @click="delMsg(data.orderId,'/tOrder/delete')">
+                                                    删除
+                                                </button>&nbsp;</span>
+                                                </td>
+                                                    <td>{{data.orderId}}</td>
+                                                    <td>{{data.userId}}</td>
+                                                    <td>{{data.orderStatus}}</td>
+                                                    <td>{{data.goodNum}}</td>
+                                                    <td>{{data.goodId}}</td>
+                                                    <td>{{data.detailId}}</td>
+                                                    <td>{{data.addr}}</td>
+                                                    <td>{{data.addName}}</td>
+                                                    <td>{{data.addTel}}</td>
+                                                    <td>{{data.timeSubmit}}</td>
+                                                    <td>{{data.timePay}}</td>
+                                                    <td>{{data.timeCancel}}</td>
+                                                    <td>{{data.timeShip}}</td>
+                                                    <td>{{data.timeReturn}}</td>
+                                                    <td>{{data.timeFinish}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div id="pageID" class="page_div"></div>
+                                    </div>
+                                    <!-- 查询结果表格显示区域 end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 修改模态框 -->
+            <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="updateModalLabel">修改信息</h4>
+                        </div>
+                        <div class="modal-body" id="updateModalBody">
+                            <form>
+                                        <div class="form-group">
+                                            <label for="orderId-attr" class="control-label">order_id:</label>
+                                            <input type="text" class="form-control" id="orderId-attr"
+                                                   v-model="orderId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="userId-attr" class="control-label">user_id:</label>
+                                            <input type="text" class="form-control" id="userId-attr"
+                                                   v-model="userId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="orderStatus-attr" class="control-label">order_status:</label>
+                                            <input type="text" class="form-control" id="orderStatus-attr"
+                                                   v-model="orderStatus"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="goodNum-attr" class="control-label">good_num:</label>
+                                            <input type="text" class="form-control" id="goodNum-attr"
+                                                   v-model="goodNum"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="goodId-attr" class="control-label">good_id:</label>
+                                            <input type="text" class="form-control" id="goodId-attr"
+                                                   v-model="goodId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailId-attr" class="control-label">detail_id:</label>
+                                            <input type="text" class="form-control" id="detailId-attr"
+                                                   v-model="detailId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addr-attr" class="control-label">addr:</label>
+                                            <input type="text" class="form-control" id="addr-attr"
+                                                   v-model="addr"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addName-attr" class="control-label">add_name:</label>
+                                            <input type="text" class="form-control" id="addName-attr"
+                                                   v-model="addName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addTel-attr" class="control-label">add_tel:</label>
+                                            <input type="text" class="form-control" id="addTel-attr"
+                                                   v-model="addTel"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeSubmit-attr" class="control-label">time_submit:</label>
+                                            <input type="text" class="form-control" id="timeSubmit-attr"
+                                                   v-model="timeSubmit"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timePay-attr" class="control-label">time_pay:</label>
+                                            <input type="text" class="form-control" id="timePay-attr"
+                                                   v-model="timePay"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeCancel-attr" class="control-label">time_cancel:</label>
+                                            <input type="text" class="form-control" id="timeCancel-attr"
+                                                   v-model="timeCancel"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeShip-attr" class="control-label">time_ship:</label>
+                                            <input type="text" class="form-control" id="timeShip-attr"
+                                                   v-model="timeShip"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeReturn-attr" class="control-label">time_return:</label>
+                                            <input type="text" class="form-control" id="timeReturn-attr"
+                                                   v-model="timeReturn"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeFinish-attr" class="control-label">time_finish:</label>
+                                            <input type="text" class="form-control" id="timeFinish-attr"
+                                                   v-model="timeFinish"/>
+                                        </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="orderId-attr"
+                                               v-model="orderId"/>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" @click="confirmUp()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 添加模态框 -->
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="addModalLabel">添加信息</h4>
+                        </div>
+                        <div class="modal-body" id="addModalBody">
+                            <form>
+                                        <div class="form-group">
+                                            <label for="orderId-insert" class="control-label">order_id:</label>
+                                            <input type="text" class="form-control" id="orderId-insert"
+                                                   v-model="orderId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="userId-insert" class="control-label">user_id:</label>
+                                            <input type="text" class="form-control" id="userId-insert"
+                                                   v-model="userId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="orderStatus-insert" class="control-label">order_status:</label>
+                                            <input type="text" class="form-control" id="orderStatus-insert"
+                                                   v-model="orderStatus"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="goodNum-insert" class="control-label">good_num:</label>
+                                            <input type="text" class="form-control" id="goodNum-insert"
+                                                   v-model="goodNum"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="goodId-insert" class="control-label">good_id:</label>
+                                            <input type="text" class="form-control" id="goodId-insert"
+                                                   v-model="goodId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="detailId-insert" class="control-label">detail_id:</label>
+                                            <input type="text" class="form-control" id="detailId-insert"
+                                                   v-model="detailId"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addr-insert" class="control-label">addr:</label>
+                                            <input type="text" class="form-control" id="addr-insert"
+                                                   v-model="addr"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addName-insert" class="control-label">add_name:</label>
+                                            <input type="text" class="form-control" id="addName-insert"
+                                                   v-model="addName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addTel-insert" class="control-label">add_tel:</label>
+                                            <input type="text" class="form-control" id="addTel-insert"
+                                                   v-model="addTel"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeSubmit-insert" class="control-label">time_submit:</label>
+                                            <input type="text" class="form-control" id="timeSubmit-insert"
+                                                   v-model="timeSubmit"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timePay-insert" class="control-label">time_pay:</label>
+                                            <input type="text" class="form-control" id="timePay-insert"
+                                                   v-model="timePay"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeCancel-insert" class="control-label">time_cancel:</label>
+                                            <input type="text" class="form-control" id="timeCancel-insert"
+                                                   v-model="timeCancel"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeShip-insert" class="control-label">time_ship:</label>
+                                            <input type="text" class="form-control" id="timeShip-insert"
+                                                   v-model="timeShip"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeReturn-insert" class="control-label">time_return:</label>
+                                            <input type="text" class="form-control" id="timeReturn-insert"
+                                                   v-model="timeReturn"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="timeFinish-insert" class="control-label">time_finish:</label>
+                                            <input type="text" class="form-control" id="timeFinish-insert"
+                                                   v-model="timeFinish"/>
+                                        </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" @click="confirmAdd()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 全局js -->
+            <script src="../../js/jquery.min.js?v=2.1.4"></script>
+            <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+
+            <!-- 自定义js -->
+            <script src="../../js/content.js?v=1.0.0"></script>
+
+
+            <!-- Bootstrap table -->
+            <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+            <script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+            <script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+            <!-- Peity -->
+            <!-- <script src="../../js/demo/bootstrap-table-demo.js"></script> -->
+            <script src="../../js/vue/vue.min.js"></script>
+            <script src="../../js/util/ajaxFactory.js"></script>
+            <script src="../../js/util/crudVueFactory.js"></script>
+            <script src="../../js/util/pageMe.js"></script>
+            <script src="../../js/config/config.js"></script>
+            <script src="../../js/plugins/layer/layer.min.js"></script>
+            <script src="../../js/plugins/progressbar/init-mprogress.js"></script>
+            <script src="../../js/plugins/progressbar/mprogress.js"></script>
+
+            <script>
+                var currentPage = 1;
+                var totalPage;
+                var sqlMap = {};
+                //排序的数据
+                var orderData = [];
+                var controllerPrefix = "tOrder";
+                var methodName = "likeSelect";
+
+                var queryVue = new Vue({
+                    el: '#queryModel',
+                    data: {
+                orderId :
+                '',
+                userId :
+                '',
+                orderStatus :
+                '',
+                goodNum :
+                '',
+                goodId :
+                '',
+                detailId :
+                '',
+                addr :
+                '',
+                addName :
+                '',
+                addTel :
+                '',
+                timeSubmit :
+                '',
+                timePay :
+                '',
+                timeCancel :
+                '',
+                timeShip :
+                '',
+                timeReturn :
+                '',
+                timeFinish :
+                ''                },
+                methods : {
+                    queryInfo : function () {
+                        sqlMap = {};
+                        sqlMap.orderId = this.orderId;
+                        sqlMap.userId = this.userId;
+                        sqlMap.orderStatus = this.orderStatus;
+                        sqlMap.goodNum = this.goodNum;
+                        sqlMap.goodId = this.goodId;
+                        sqlMap.detailId = this.detailId;
+                        sqlMap.addr = this.addr;
+                        sqlMap.addName = this.addName;
+                        sqlMap.addTel = this.addTel;
+                        sqlMap.timeSubmit = this.timeSubmit;
+                        sqlMap.timePay = this.timePay;
+                        sqlMap.timeCancel = this.timeCancel;
+                        sqlMap.timeShip = this.timeShip;
+                        sqlMap.timeReturn = this.timeReturn;
+                        sqlMap.timeFinish = this.timeFinish;
+                        currentPage = 1;
+                        orderData = [];
+                        $crud.getDataByCurrentPage();
+                    }
+                ,
+                    exportExcel : function () {
+
+                        //显示进度条
+                        InitMprogress();
+
+                        var param = '';
+
+                        for (var key in sqlMap) {
+                            if (sqlMap[key] != '') {
+                                param += key + "=" + sqlMap[key] + "&";
+                            }
+                        }
+
+                        window.location.href = basePath + "/" + controllerPrefix
+                            + "/exportExcel?" + param;
+                        // 进度条消失
+                        setTimeout("MprogressEnd()", totalPage / 20 * 1000);
+                    }
+                }
+
+                })
+                ;
+
+                function makeResult(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i] == null) {
+                            data[i] = {};
+                            data[i]["orderId"] = "无";
+                            data[i]["userId"] = "无";
+                            data[i]["orderStatus"] = "无";
+                            data[i]["goodNum"] = "无";
+                            data[i]["goodId"] = "无";
+                            data[i]["detailId"] = "无";
+                            data[i]["addr"] = "无";
+                            data[i]["addName"] = "无";
+                            data[i]["addTel"] = "无";
+                            data[i]["timeSubmit"] = "无";
+                            data[i]["timePay"] = "无";
+                            data[i]["timeCancel"] = "无";
+                            data[i]["timeShip"] = "无";
+                            data[i]["timeReturn"] = "无";
+                            data[i]["timeFinish"] = "无";
+                        }
+                    }
+                }
+
+                var tableVue = new Vue({
+                    el: '#newsContent',
+                    data: {
+                        result: []
+                    },
+                    //created:
+                    mounted: function () {
+                        $crud.getDataByCurrentPage();
+                    },
+                    methods: {
+
+                        upMsg: function (orderId, path) {
+
+                            $z.ajaxPost({
+                                url: basePath + path,
+                                data: {
+                            orderId : orderId
+                        },
+                            success : function (data) {
+                                $z.dealCommonResult(data, function () {
+                                    data = data.data;
+                                    upVue.orderId = data[0]["orderId"];
+                                    upVue.orderId = data[0]["orderId"];
+                                    upVue.userId = data[0]["userId"];
+                                    upVue.orderStatus = data[0]["orderStatus"];
+                                    upVue.goodNum = data[0]["goodNum"];
+                                    upVue.goodId = data[0]["goodId"];
+                                    upVue.detailId = data[0]["detailId"];
+                                    upVue.addr = data[0]["addr"];
+                                    upVue.addName = data[0]["addName"];
+                                    upVue.addTel = data[0]["addTel"];
+                                    upVue.timeSubmit = data[0]["timeSubmit"];
+                                    upVue.timePay = data[0]["timePay"];
+                                    upVue.timeCancel = data[0]["timeCancel"];
+                                    upVue.timeShip = data[0]["timeShip"];
+                                    upVue.timeReturn = data[0]["timeReturn"];
+                                    upVue.timeFinish = data[0]["timeFinish"];
+                                    $('#updateModal').modal('show');
+                                });
+                            }
+                        })
+                            ;
+                        },
+                        delMsg: function (orderId, path) {
+                            layer.confirm("<em style='color:black'>" + '执行删除后将无法恢复，确定继续吗？' + "</em>", {
+                                icon: 3,
+                                offset: "200px",
+                                title: '温馨提示'
+                            }, function (index) {
+                                //do something
+                                $z.ajaxPost({
+                                    url: basePath + path,
+                                    data: {
+                                orderId : orderId
+                            },
+                                success: function (data) {
+                                    $z.dealCommonResult(data, function () {
+                                        $crud.getDataByCurrentPage();
+                                        layer.alert("<em style='color:black'>" + "删除成功！" + "</em>", {
+                                            icon: 6,
+                                            offset: "200px",
+                                            title: '提示'
+                                        });
+                                    });
+                                }
+                            })
+                                ;
+                                layer.close(index);
+                            });
+                        }
+                    }
+                });
+
+                var upVue = new Vue({
+                    el: "#updateModal",
+                    data: {
+                orderId :
+                '',
+                orderId :
+                '',
+                userId :
+                '',
+                orderStatus :
+                '',
+                goodNum :
+                '',
+                goodId :
+                '',
+                detailId :
+                '',
+                addr :
+                '',
+                addName :
+                '',
+                addTel :
+                '',
+                timeSubmit :
+                '',
+                timePay :
+                '',
+                timeCancel :
+                '',
+                timeShip :
+                '',
+                timeReturn :
+                '',
+                timeFinish :
+                ''                },
+                methods : {
+                    confirmUp : function () {
+                        $z.ajaxPost({
+                            url: basePath + "/" + controllerPrefix + "/update",
+                            data: {
+                        orderId :
+                        this.orderId,
+                        orderId :
+                        this.orderId,
+                        userId :
+                        this.userId,
+                        orderStatus :
+                        this.orderStatus,
+                        goodNum :
+                        this.goodNum,
+                        goodId :
+                        this.goodId,
+                        detailId :
+                        this.detailId,
+                        addr :
+                        this.addr,
+                        addName :
+                        this.addName,
+                        addTel :
+                        this.addTel,
+                        timeSubmit :
+                        this.timeSubmit,
+                        timePay :
+                        this.timePay,
+                        timeCancel :
+                        this.timeCancel,
+                        timeShip :
+                        this.timeShip,
+                        timeReturn :
+                        this.timeReturn,
+                        timeFinish :
+                        this.timeFinish                    },
+                        success : function (data) {
+                            $z.dealCommonResult(data, function () {
+                                layer.alert("<em style='color:black'>" + "更新成功！" + "</em>", {
+                                    icon: 6,
+                                    offset: "200px",
+                                    title: '提示'
+                                });
+                                $('#updateModal').modal('hide');
+                                $crud.getDataByCurrentPage();
+                            });
+
+                        }
+                    })
+                        ;
+                    }
+                }
+                })
+                ;
+
+                function addMsg() {
+                    $('#addModal').modal('show');
+                }
+
+                var addVue = new Vue({
+
+                    el: "#addModal",
+                    data: {
+                orderId :
+                '',
+                userId :
+                '',
+                orderStatus :
+                '',
+                goodNum :
+                '',
+                goodId :
+                '',
+                detailId :
+                '',
+                addr :
+                '',
+                addName :
+                '',
+                addTel :
+                '',
+                timeSubmit :
+                '',
+                timePay :
+                '',
+                timeCancel :
+                '',
+                timeShip :
+                '',
+                timeReturn :
+                '',
+                timeFinish :
+                ''                },
+                methods : {
+                    confirmAdd : function () {
+                        $z.ajaxPost({
+                            url: basePath + "/" + controllerPrefix + "/add",
+                            data: {
+                        orderId :
+                        this.orderId,
+                        userId :
+                        this.userId,
+                        orderStatus :
+                        this.orderStatus,
+                        goodNum :
+                        this.goodNum,
+                        goodId :
+                        this.goodId,
+                        detailId :
+                        this.detailId,
+                        addr :
+                        this.addr,
+                        addName :
+                        this.addName,
+                        addTel :
+                        this.addTel,
+                        timeSubmit :
+                        this.timeSubmit,
+                        timePay :
+                        this.timePay,
+                        timeCancel :
+                        this.timeCancel,
+                        timeShip :
+                        this.timeShip,
+                        timeReturn :
+                        this.timeReturn,
+                        timeFinish :
+                        this.timeFinish                    },
+                        success : function (data) {
+                            $z.dealCommonResult(data, function () {
+                                layer.alert("<em style='color:black'>" + "添加成功！" + "</em>", {
+                                    icon: 6,
+                                    offset: "200px",
+                                    title: '提示'
+                                });
+                                $('#addModal').modal('hide');
+                                //初始化
+                                sqlMap = {};
+                                currentPage = 1;
+                                $crud.getDataByCurrentPage();
+                            });
+
+                        }
+                    })
+                        ;
+                    }
+                }
+                })
+                ;
+            </script>
+        </div>
+        </body>
+        </html>

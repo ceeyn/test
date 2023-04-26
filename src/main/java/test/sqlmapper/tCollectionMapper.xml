@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="test.dao.TCollectionDao">
+
+    <!--添加-->
+	<insert id="add" parameterType="test.entity.TCollectionEntity">
+		insert into `t_collection`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="goodId != null">
+                good_id,
+            </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				<if test="userId != null">
+					#{userId},
+				</if>
+				<if test="goodId != null">
+					#{goodId},
+				</if>
+		</trim>
+	</insert>
+
+    <!--删除-->
+	<delete id="delete" parameterType="test.entity.TCollectionEntity">
+		delete from `t_collection`
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+            <if test="userId != null">
+                and user_id=#{userId}
+            </if>
+            <if test="userId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</delete>
+
+    <!--更新-->
+	<update id="update" parameterType="test.entity.TCollectionEntity">
+		update `t_collection`
+		<trim prefix="set" suffixOverrides=",">
+				<if test="userId != null">
+					user_id=#{userId},
+				</if>
+				<if test="goodId != null">
+					good_id=#{goodId},
+				</if>
+		</trim>
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+            <if test="userId != null">
+                and user_id=#{userId}
+            </if>
+            <if test="userId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</update>
+
+    <!--固定条件查询-->
+	<select id="select" parameterType="test.entity.TCollectionEntity"
+		resultType="test.entity.TCollectionEntity">
+			select
+				user_id as "userId",
+				good_id as "goodId"
+			from `t_collection`
+			<where>
+					<if test="userId != null">
+						and user_id=#{userId}
+					</if>
+					<if test="goodId != null">
+						and good_id=#{goodId}
+					</if>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊查询的公共条件）-->
+    <sql id="likeSelectConditions">
+                <if test="userId != null and userId != '' ">
+                and user_id <![CDATA[=]]> #{userId}
+                </if>
+                <if test="goodId != null and goodId != '' ">
+                and good_id <![CDATA[=]]> #{goodId}
+                </if>
+    </sql>
+
+    <!--分页（模糊）查询-->
+	<select id="likeSelect" parameterType="test.entity.TCollectionEntity"
+		resultType="test.entity.TCollectionEntity">
+			select
+				user_id as "userId",
+				good_id as "goodId"
+
+                from `t_collection`
+
+			<where>
+                <include refid="likeSelectConditions"/>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊）查询条数-->
+	<select id="likeSelectCount" parameterType="test.entity.TCollectionEntity"
+		resultType="java.lang.Long">
+		select
+			count(1)
+		from `t_collection`
+
+		<where>
+            <include refid="likeSelectConditions"/>
+		</where>
+	</select>
+
+</mapper>

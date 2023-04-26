@@ -1,0 +1,291 @@
+2023-04-23 21:58:38 -Starting TestApplication on MacBook-Pro-3 with PID 20650 (/Users/haozhipeng/Desktop/test/target/classes started by haozhipeng in /Users/haozhipeng/Desktop/test)
+2023-04-23 21:58:38 -No active profile set, falling back to default profiles: default
+2023-04-23 21:58:38 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-23 21:58:38 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-23 21:58:39 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'transactionAdviceConfig' of type [test.config.TransactionAdviceConfig$$EnhancerBySpringCGLIB$$c0077e20] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-23 21:58:39 -Tomcat initialized with port(s): 8080 (http)
+2023-04-23 21:58:39 -Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-23 21:58:39 -Starting service [Tomcat]
+2023-04-23 21:58:39 -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-04-23 21:58:39 -Initializing Spring embedded WebApplicationContext
+2023-04-23 21:58:39 -Root WebApplicationContext: initialization completed in 1529 ms
+2023-04-23 21:58:40 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-23 21:58:40 -Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-23 21:58:40 -LiveReload server is running on port 35729
+2023-04-23 21:58:40 -Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-23 21:58:40 -Initializing ExecutorService 'taskScheduler'
+2023-04-23 21:58:40 -Context refreshed
+2023-04-23 21:58:40 -Found 1 custom documentation plugin(s)
+2023-04-23 21:58:40 -Scanning for api listing references
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_1
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_1
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_1
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_1
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_1
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_1
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_2
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_2
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_2
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_2
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_2
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_2
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_3
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_3
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_3
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_3
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_3
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_3
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_4
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_4
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_4
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_4
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_4
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_4
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_5
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_5
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_5
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_5
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_5
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_5
+2023-04-23 21:58:41 -Generating unique operation named: addUsingPOST_6
+2023-04-23 21:58:41 -Generating unique operation named: deleteUsingPOST_6
+2023-04-23 21:58:41 -Generating unique operation named: exportExcelUsingGET_6
+2023-04-23 21:58:41 -Generating unique operation named: likeSelectUsingPOST_6
+2023-04-23 21:58:41 -Generating unique operation named: selectUsingPOST_6
+2023-04-23 21:58:41 -Generating unique operation named: updateUsingPOST_6
+2023-04-23 21:58:41 -Starting ProtocolHandler ["http-nio-8080"]
+2023-04-23 21:58:41 -Tomcat started on port(s): 8080 (http) with context path '/test'
+2023-04-23 21:58:41 -Started TestApplication in 3.387 seconds (JVM running for 4.316)
+2023-04-23 21:58:55 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-23 21:58:55 -Initializing Servlet 'dispatcherServlet'
+2023-04-23 21:58:55 -Completed initialization in 8 ms
+2023-04-23 21:59:08 -======= 开始执行：TKindController — likeSelect ========
+2023-04-23 21:59:08 -Retail_HikariCP - Starting...
+2023-04-23 21:59:08 -Retail_HikariCP - Start completed.
+2023-04-23 21:59:08 -==>  Preparing: select count(1) from `t_kind` 
+2023-04-23 21:59:08 -==> Parameters: 
+2023-04-23 21:59:08 -<==      Total: 1
+2023-04-23 21:59:08 -==>  Preparing: select kind_id as "kindId", kind_name as "kindName" from `t_kind` limit ?,? 
+2023-04-23 21:59:08 -==> Parameters: 0(Integer), 10(Integer)
+2023-04-23 21:59:08 -<==      Total: 5
+2023-04-23 21:59:08 -======= 执行结束：TKindController — likeSelect ========
+2023-04-23 21:59:11 -======= 开始执行：TShoppingcarController — likeSelect ========
+2023-04-23 21:59:11 -==>  Preparing: select count(1) from `t_shoppingcar` 
+2023-04-23 21:59:11 -==> Parameters: 
+2023-04-23 21:59:11 -<==      Total: 1
+2023-04-23 21:59:11 -==>  Preparing: select user_id as "userId", good_id as "goodId", detail_id as "detailId" from `t_shoppingcar` limit ?,? 
+2023-04-23 21:59:11 -==> Parameters: 0(Integer), 10(Integer)
+2023-04-23 21:59:11 -<==      Total: 8
+2023-04-23 21:59:11 -======= 执行结束：TShoppingcarController — likeSelect ========
+2023-04-23 21:59:14 -======= 开始执行：TGoodsController — likeSelect ========
+2023-04-23 21:59:14 -==>  Preparing: select count(1) from `t_goods` 
+2023-04-23 21:59:14 -==> Parameters: 
+2023-04-23 21:59:14 -<==      Total: 1
+2023-04-23 21:59:14 -==>  Preparing: select good_id as "goodId", good_kind as "goodKind", good_name as "goodName", good_dis as "goodDis", good_mid as "goodMid", good_price as "goodPrice", good_over as "goodOver", good_pre as "goodPre", istoday as "istoday" from `t_goods` limit ?,? 
+2023-04-23 21:59:14 -==> Parameters: 0(Integer), 10(Integer)
+2023-04-23 21:59:14 -<==      Total: 10
+2023-04-23 21:59:14 -======= 执行结束：TGoodsController — likeSelect ========
+2023-04-23 21:59:16 -======= 开始执行：TCollectionController — likeSelect ========
+2023-04-23 21:59:16 -==>  Preparing: select count(1) from `t_collection` 
+2023-04-23 21:59:16 -==> Parameters: 
+2023-04-23 21:59:16 -<==      Total: 1
+2023-04-23 21:59:16 -==>  Preparing: select user_id as "userId", good_id as "goodId" from `t_collection` limit ?,? 
+2023-04-23 21:59:16 -==> Parameters: 0(Integer), 10(Integer)
+2023-04-23 21:59:16 -<==      Total: 5
+2023-04-23 21:59:16 -======= 执行结束：TCollectionController — likeSelect ========
+2023-04-23 21:59:18 -======= 开始执行：TUser1Controller — likeSelect ========
+2023-04-23 21:59:18 -==>  Preparing: select count(1) from `t_user1` 
+2023-04-23 21:59:18 -==> Parameters: 
+2023-04-23 21:59:18 -运行时异常
+java.lang.RuntimeException: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+### The error may exist in file [/Users/haozhipeng/Desktop/test/target/classes/sqlmapper/tUser1Mapper.xml]
+### The error may involve test.dao.TUser1Dao.likeSelectCount-Inline
+### The error occurred while setting parameters
+### SQL: select    count(1)   from `t_user1`
+### Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+	at test.utils.PageUtil.commonPage(PageUtil.java:119)
+	at test.utils.PageUtil.getPageData(PageUtil.java:20)
+	at test.service.impl.TUser1ServiceImpl.likeSelect(TUser1ServiceImpl.java:51)
+	at test.service.impl.TUser1ServiceImpl$$FastClassBySpringCGLIB$$a24a12a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at test.service.impl.TUser1ServiceImpl$$EnhancerBySpringCGLIB$$5accf7db.likeSelect(<generated>)
+	at test.controller.TUser1Controller.likeSelect(TUser1Controller.java:59)
+	at test.controller.TUser1Controller$$FastClassBySpringCGLIB$$bc63e7c4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at test.config.LogAopAspect.process(LogAopAspect.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at test.controller.TUser1Controller$$EnhancerBySpringCGLIB$$6767439c.likeSelect(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+### The error may exist in file [/Users/haozhipeng/Desktop/test/target/classes/sqlmapper/tUser1Mapper.xml]
+### The error may involve test.dao.TUser1Dao.likeSelectCount-Inline
+### The error occurred while setting parameters
+### SQL: select    count(1)   from `t_user1`
+### Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy98.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy111.likeSelectCount(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy112.likeSelectCount(Unknown Source)
+	at test.utils.PageUtil.commonPage(PageUtil.java:108)
+	... 92 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy147.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 109 common frames omitted
+2023-04-23 21:59:18 -Resolved [java.lang.RuntimeException: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+### The error may exist in file [/Users/haozhipeng/Desktop/test/target/classes/sqlmapper/tUser1Mapper.xml]
+### The error may involve test.dao.TUser1Dao.likeSelectCount-Inline
+### The error occurred while setting parameters
+### SQL: select    count(1)   from `t_user1`
+### Cause: java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'shopping.t_user1' doesn't exist]
+2023-04-23 21:59:21 -======= 开始执行：TDetailController — likeSelect ========
+2023-04-23 21:59:21 -==>  Preparing: select count(1) from `t_detail` 
+2023-04-23 21:59:21 -==> Parameters: 
+2023-04-23 21:59:21 -<==      Total: 1
+2023-04-23 21:59:21 -==>  Preparing: select good_id as "goodId", detail_id as "detailId", detail_name as "detailName" from `t_detail` limit ?,? 
+2023-04-23 21:59:21 -==> Parameters: 0(Integer), 10(Integer)
+2023-04-23 21:59:21 -<==      Total: 4
+2023-04-23 21:59:21 -======= 执行结束：TDetailController — likeSelect ========
+2023-04-23 21:59:24 -Shutting down ExecutorService 'taskScheduler'
+2023-04-23 21:59:24 -Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-23 21:59:24 -Retail_HikariCP - Shutdown initiated...
+2023-04-23 21:59:24 -Retail_HikariCP - Shutdown completed.

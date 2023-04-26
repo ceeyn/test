@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="test.dao.TGoodsDao">
+
+    <!--添加-->
+	<insert id="add" parameterType="test.entity.TGoodsEntity">
+		insert into `t_goods`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodId != null">
+                good_id,
+            </if>
+            <if test="goodKind != null">
+                good_kind,
+            </if>
+            <if test="goodName != null">
+                good_name,
+            </if>
+            <if test="goodDis != null">
+                good_dis,
+            </if>
+            <if test="goodMid != null">
+                good_mid,
+            </if>
+            <if test="goodPrice != null">
+                good_price,
+            </if>
+            <if test="goodOver != null">
+                good_over,
+            </if>
+            <if test="goodPre != null">
+                good_pre,
+            </if>
+            <if test="istoday != null">
+                istoday,
+            </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				<if test="goodId != null">
+					#{goodId},
+				</if>
+				<if test="goodKind != null">
+					#{goodKind},
+				</if>
+				<if test="goodName != null">
+					#{goodName},
+				</if>
+				<if test="goodDis != null">
+					#{goodDis},
+				</if>
+				<if test="goodMid != null">
+					#{goodMid},
+				</if>
+				<if test="goodPrice != null">
+					#{goodPrice},
+				</if>
+				<if test="goodOver != null">
+					#{goodOver},
+				</if>
+				<if test="goodPre != null">
+					#{goodPre},
+				</if>
+				<if test="istoday != null">
+					#{istoday},
+				</if>
+		</trim>
+	</insert>
+
+    <!--删除-->
+	<delete id="delete" parameterType="test.entity.TGoodsEntity">
+		delete from `t_goods`
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</delete>
+
+    <!--更新-->
+	<update id="update" parameterType="test.entity.TGoodsEntity">
+		update `t_goods`
+		<trim prefix="set" suffixOverrides=",">
+				<if test="goodId != null">
+					good_id=#{goodId},
+				</if>
+				<if test="goodKind != null">
+					good_kind=#{goodKind},
+				</if>
+				<if test="goodName != null">
+					good_name=#{goodName},
+				</if>
+				<if test="goodDis != null">
+					good_dis=#{goodDis},
+				</if>
+				<if test="goodMid != null">
+					good_mid=#{goodMid},
+				</if>
+				<if test="goodPrice != null">
+					good_price=#{goodPrice},
+				</if>
+				<if test="goodOver != null">
+					good_over=#{goodOver},
+				</if>
+				<if test="goodPre != null">
+					good_pre=#{goodPre},
+				</if>
+				<if test="istoday != null">
+					istoday=#{istoday},
+				</if>
+		</trim>
+		<where>
+            <if test="goodId != null">
+                and good_id=#{goodId}
+            </if>
+            <if test="goodId == null">
+                and 1 = 0
+            </if>
+		</where>
+	</update>
+
+    <!--固定条件查询-->
+	<select id="select" parameterType="test.entity.TGoodsEntity"
+		resultType="test.entity.TGoodsEntity">
+			select
+				good_id as "goodId",
+				good_kind as "goodKind",
+				good_name as "goodName",
+				good_dis as "goodDis",
+				good_mid as "goodMid",
+				good_price as "goodPrice",
+				good_over as "goodOver",
+				good_pre as "goodPre",
+				istoday as "istoday"
+			from `t_goods`
+			<where>
+					<if test="goodId != null">
+						and good_id=#{goodId}
+					</if>
+					<if test="goodKind != null">
+						and good_kind=#{goodKind}
+					</if>
+					<if test="goodName != null">
+						and good_name=#{goodName}
+					</if>
+					<if test="goodDis != null">
+						and good_dis=#{goodDis}
+					</if>
+					<if test="goodMid != null">
+						and good_mid=#{goodMid}
+					</if>
+					<if test="goodPrice != null">
+						and good_price=#{goodPrice}
+					</if>
+					<if test="goodOver != null">
+						and good_over=#{goodOver}
+					</if>
+					<if test="goodPre != null">
+						and good_pre=#{goodPre}
+					</if>
+					<if test="istoday != null">
+						and istoday=#{istoday}
+					</if>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊查询的公共条件）-->
+    <sql id="likeSelectConditions">
+                <if test="goodId != null and goodId != '' ">
+                and good_id <![CDATA[=]]> #{goodId}
+                </if>
+                <if test="goodKind != null and goodKind != '' ">
+                and good_kind <![CDATA[=]]> #{goodKind}
+                </if>
+                <if test="goodName != null and goodName != '' ">
+                and good_name <![CDATA[=]]> #{goodName}
+                </if>
+                <if test="goodDis != null and goodDis != '' ">
+                and good_dis <![CDATA[=]]> #{goodDis}
+                </if>
+                <if test="goodMid != null and goodMid != '' ">
+                and good_mid <![CDATA[=]]> #{goodMid}
+                </if>
+                <if test="goodPrice != null and goodPrice != '' ">
+                and good_price <![CDATA[=]]> #{goodPrice}
+                </if>
+                <if test="goodOver != null and goodOver != '' ">
+                and good_over <![CDATA[=]]> #{goodOver}
+                </if>
+                <if test="goodPre != null and goodPre != '' ">
+                and good_pre <![CDATA[=]]> #{goodPre}
+                </if>
+                <if test="istoday != null and istoday != '' ">
+                and istoday <![CDATA[=]]> #{istoday}
+                </if>
+    </sql>
+
+    <!--分页（模糊）查询-->
+	<select id="likeSelect" parameterType="test.entity.TGoodsEntity"
+		resultType="test.entity.TGoodsEntity">
+			select
+				good_id as "goodId",
+				good_kind as "goodKind",
+				good_name as "goodName",
+				good_dis as "goodDis",
+				good_mid as "goodMid",
+				good_price as "goodPrice",
+				good_over as "goodOver",
+				good_pre as "goodPre",
+				istoday as "istoday"
+
+                from `t_goods`
+
+			<where>
+                <include refid="likeSelectConditions"/>
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+            <if test="start != null and pageSize != null">
+                limit #{start},#{pageSize}
+            </if>
+
+
+	</select>
+
+    <!--分页（模糊）查询条数-->
+	<select id="likeSelectCount" parameterType="test.entity.TGoodsEntity"
+		resultType="java.lang.Long">
+		select
+			count(1)
+		from `t_goods`
+
+		<where>
+            <include refid="likeSelectConditions"/>
+		</where>
+	</select>
+
+</mapper>
